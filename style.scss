@@ -31,8 +31,9 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--color-text-dark);
 }
+
+span { display: inline-block; }
 
 a:active,
 a:hover,
@@ -40,13 +41,48 @@ a.active { color: var(--color-primary); }
 
 ul { list-style: none; }
 
+.icon-burger {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 4rem;
+    height: 2.4rem;
+
+    cursor: pointer;
+
+    span, span::after, span::before {
+        content: "";
+        width: 80%;
+        height: .15rem;
+
+        display: inline-block;
+        
+        background: var(--color-text-dark);
+    }
+    
+    span::after {
+        position: absolute;
+        bottom: 0;
+    }
+    
+    span::before {
+        position: absolute;
+        top: 0;
+    }
+
+}
 
 .btn,
 input[type=submit] {
     display: inline-block;
 
     padding: .8rem 1.6rem;
-
+    
+    font-family: "Oswald", sans-serif;
+    letter-spacing: .09em;
 }
 
 .btn-primary {
@@ -84,7 +120,7 @@ header {
     letter-spacing: -.04em;
     line-height: 3rem;
 
-    color: inherit;
+    a { color: var(--color-text-dark); }
 
     &.mg-sm {
         margin-bottom: .8rem;
@@ -178,15 +214,16 @@ footer {
         a { color: inherit; }
     }
 
-    p {
+    
+    .copyright {
+        margin-bottom: 2.4rem;
+
         font-size: var(--text-xsm);
+
         color: rgba(225, 225, 225, .7);
     }
-
-    &-copyright {
-        margin-bottom: 1.6rem;
-    }
 }
+
 
 .subscribe {
 
@@ -201,5 +238,57 @@ footer {
     input[type=email],
     input[type=pasword] {
         padding: .8rem 1.6rem;
+    }
+}
+
+.follow-us {
+
+    display: flex;
+    justify-content: flex-start;
+
+    margin: 3.2rem auto;
+
+    .text {
+        font-size: 1.4rem;
+
+        color: rgba(225, 225, 225, .7);
+
+        margin-right: 1.4rem;
+    }
+
+    .icon {
+        margin: 0 .9rem;
+    }
+}
+
+.icon {
+    display: inline-block;
+}
+
+
+.footer-nav {
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        max-height: 18rem;
+        width: 100%;
+
+        list-style: none;
+    }
+
+    li {
+        margin: .8rem 0;
+        flex: 1 1 auto;
+    }
+
+    li a { 
+        font-size: 1.4rem;
+        color: var(--color-white); 
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        font-family: "Oswald", sans-serif;
     }
 }
